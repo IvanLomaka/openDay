@@ -31,3 +31,23 @@ window.addEventListener('onload', () => {
         wrapperNav.classList.remove('active')
     }
 })
+
+// navbar colors and change section
+
+const dataSections = document.querySelectorAll('[data-section]')
+
+for(let i = 1; i < navUlList.length; i++)  navUlList[i].classList.add('color-class')
+
+navUlList.forEach(button => {
+    button.addEventListener('click', (e) => {
+        navUlList.forEach(e => e.classList.add('color-class'))
+        button.classList.remove('color-class')
+        console.log(button.getAttribute('index'))
+        addRemoveSections(parseInt(button.getAttribute('index')))
+    })
+})
+
+function addRemoveSections(i) {
+    dataSections.forEach(e => e.classList.add('hide'))
+    dataSections[i].classList.remove('hide')
+}

@@ -90,7 +90,19 @@ ul {
   list-style: none;
 }
 
+.hide {
+    display: none!important;
+}
+
 /* START NAV */
+
+.color-class {
+    color: rgb(192, 192, 192);
+}
+
+.color-class:hover {
+    color: white;
+}
 
 nav {
     display: flex;
@@ -155,6 +167,14 @@ nav ul li a {
 }
 
 @media screen and (max-width: 864px) {
+    .color-class {
+        color: black;
+    }
+
+    .color-class:hover {
+        color: black;
+    }
+
     nav.active {
         height: max(8vh, 70px);
     }
@@ -447,17 +467,6 @@ nav ul li a {
     }
 }
 
-/* .landing .landing-square:hover p {
-    color: white;
-}
-
- */
-
-
-
-
-
-
 /* END LANDING PAGE */
 
 /* TOUR PAGE */
@@ -565,3 +574,23 @@ nav ul li a {
 }
 
 /* END TOUR PAGE */
+
+/* START TIMETABLES OPEN DAY */
+
+.open-day-presenza-wrapper {
+    height: 100vh;
+    width: 100%;
+    background-color: red;
+}
+
+/* END TIMETABLES OPEN DAY */
+
+/* START OFFERTA FORMATIVA */
+
+.offerta-formativa {
+    height: 100vh;
+    width: 100%;
+    background-color: yellow;
+}
+
+/* END OFFERTA FORMATIVA */
