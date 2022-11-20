@@ -36,13 +36,27 @@ window.addEventListener('onload', () => {
 
 const dataSections = document.querySelectorAll('[data-section]')
 
-for(let i = 1; i < navUlList.length; i++)  navUlList[i].classList.add('color-class')
+let color = 'white'
+
+for(let i = 1; i < navUlList.length; i++)  navUlList[i].classList.add(`color-class-${color}`)
 
 navUlList.forEach(button => {
     button.addEventListener('click', (e) => {
-        navUlList.forEach(e => e.classList.add('color-class'))
-        button.classList.remove('color-class')
-        console.log(button.getAttribute('index'))
+        navUlList.forEach(e => {
+            e.classList.remove(`color-class-${color}`)
+            e.classList.remove(`active-black`)
+        })
+
+        if(parseInt(button.getAttribute('index')) == 0) color = 'white'
+        else {
+            color = 'black'
+            button.classList.add(`active-black`)
+        }
+
+        navUlList.forEach(e => e.classList.add(`color-class-${color}`))
+
+        button.classList.remove(`color-class-${color}`)
+
         addRemoveSections(parseInt(button.getAttribute('index')))
     })
 })
