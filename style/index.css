@@ -108,12 +108,12 @@ i {
     color: rgb(75, 75, 75);
 }
 
-.color-class-black:hover {
+.color-class-black:hover, .active-black {
     color: rgb(0, 0, 0);
 }
 
-.active-black {
-    color: black;
+.background-white {
+    background: white!important;
 }
 
 nav {
@@ -263,7 +263,7 @@ nav ul li a {
         display: block;
         width: 20px;
         height: 2px;
-        background: rgb(255, 255, 255);
+        background: rgb(0, 0, 0);
         border-radius: 2px;
         margin-left: 14px;
         transition: transform 0.2s ease-in-out;
@@ -288,7 +288,7 @@ nav ul li a {
 }
 
 #nav:checked + .nav-btn i {
-    background: #000;
+    background: #000!important;
     transition: transform 0.2s ease-in-out;
 }
 
@@ -644,6 +644,7 @@ strong {
 
 .btn:hover {
     transform: scale(1.04);
+    box-shadow: 0 0rem 1rem rgba(103, 0, 0, 0.5);
     transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
@@ -651,10 +652,18 @@ strong {
     padding: 20px;
     display: flex;
     align-items: center;
+    justify-content: center;
     font-size: 22px;
     letter-spacing: 0;
     font-weight: 600;
-    box-shadow: 0 0.5rem 1.5rem rgba(22, 28, 45, 0.1);
+    box-shadow: 0 0rem 1.5rem rgba(103, 0, 0, 0.5);
+}
+
+.btn a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .get-more-btn i {
@@ -669,7 +678,40 @@ strong {
     align-items: center;
     justify-content: center;
     text-align: center;
-    line-height: 0.5
+    line-height: 1;
+}
+
+@media screen and (max-width: 864px) {
+    .open-day-presenza-wrapper {
+        width: min(90%, 1000px);
+    }
+
+    .title {
+        font-size: 30px;
+        font-weight: 700;
+    }
+    
+    .subtitle {
+        font-size: 20px;
+        margin-top: 1.4em;
+    }
+    
+    .paragraph-text {
+        font-size: 18px;
+        margin-top: 1.5em;
+    }
+    
+    .list-style {
+        font-size: 18px;
+    }
+    
+    .list-style li {
+        margin-top: 3px;
+    }
+
+    .get-more-btn {
+        padding: 18px;
+    }
 }
 
 /* END TIMETABLES OPEN DAY */

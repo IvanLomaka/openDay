@@ -5,12 +5,14 @@ const navWrapper = document.getElementById('navWrapper')
 const navUl = document.getElementById('navUl')
 const navUlList = document.querySelectorAll('[data-nav-a]')
 
-navButton.addEventListener('click', () => {
+navButton.addEventListener('click', clickFuncFornavButton)
+
+function clickFuncFornavButton() {
     navWrapper.classList.toggle('nav-wrapper-active')
     navUlList.forEach(a => {
         a.classList.toggle('nav-wrapper-ul-active')
     });
-})
+}
 
 // activate the nav
 
@@ -35,6 +37,7 @@ window.addEventListener('onload', () => {
 // navbar colors and change section
 
 const dataSections = document.querySelectorAll('[data-section]')
+const burgerMenu = [...document.getElementsByClassName('burger-menu')]
 
 let color = 'white'
 
@@ -47,8 +50,13 @@ navUlList.forEach(button => {
             e.classList.remove(`active-black`)
         })
 
-        if(parseInt(button.getAttribute('index')) == 0) color = 'white'
-        else {
+        if(parseInt(button.getAttribute('index')) == 0) {
+            burgerMenu.forEach(e => e.classList.add('background-white'))
+
+            color = 'white'
+        } else {
+            burgerMenu.forEach(e => e.classList.remove('background-white'))
+
             color = 'black'
             button.classList.add(`active-black`)
         }
@@ -58,6 +66,9 @@ navUlList.forEach(button => {
         button.classList.remove(`color-class-${color}`)
 
         addRemoveSections(parseInt(button.getAttribute('index')))
+
+        clickFuncFornavButton()
+        nav.checked = false
     })
 })
 
