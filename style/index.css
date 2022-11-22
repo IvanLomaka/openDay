@@ -8,13 +8,14 @@
 
 :root {
     --duca-red: #A03235;
-    --duca-red-more-saturation: #bc282d;
+    --duca-red-more-saturation: #670000;
     --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
 }
 
 body {
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
     font-weight: 400;
 }
 
@@ -41,7 +42,6 @@ button {
 h1, h2, h3, h4, h5, h6 {
     margin: 0px 0px 10px;
     font-weight: 600;
-    color: var(--lightest-slate);
     line-height: 1.1;
 }
 
@@ -86,9 +86,9 @@ i {
   cursor: pointer;
 }
 
-ul {
+/* ul {
   list-style: none;
-}
+} */
 
 .hide {
     display: none!important;
@@ -130,6 +130,7 @@ nav {
 
 nav.active {
     height: max(7vh, 70px);
+    background-color: #fff;
 }
 
 .logo {
@@ -586,9 +587,89 @@ nav ul li a {
 /* START TIMETABLES OPEN DAY */
 
 .open-day-presenza-wrapper {
-    height: 100vh;
-    width: 100%;
-    background-color: red;
+    padding-top: calc(3/2 * max(8vh, 70px));
+    padding-bottom: calc(3/2 * max(8vh, 70px));
+    width: min(70%, 1000px);
+    margin: auto;
+    line-height: 32px;
+    letter-spacing: -0.003em;
+}
+
+.open-day-presenza-wrapper p {
+    margin-bottom: 0;
+}
+
+.title {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--duca-red);
+}
+
+.subtitle {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 1.6em;
+}
+
+.paragraph-text {
+    font-size: 20px;
+    margin-top: 1.5em;
+}
+
+strong {
+    font-weight: 600;
+}
+
+.list-style {
+    font-size: 20px;
+    padding-left: 1.2em;
+}
+
+.list-style li {
+    margin-top: 4px;
+}
+
+.btn {
+    margin: auto;
+    margin-top: 2rem;
+    background-color: var(--duca-red);
+    display: block;
+    font-size: 16px;
+    color: #fff;
+    text-transform: capitalize;
+    border-radius: 7px;
+    letter-spacing: 1px;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    transform: scale(1.04);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.get-more-btn {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    letter-spacing: 0;
+    font-weight: 600;
+    box-shadow: 0 0.5rem 1.5rem rgba(22, 28, 45, 0.1);
+}
+
+.get-more-btn i {
+    margin-left: 0.7rem;
+}
+
+.devider {
+    height: 3em;
+    font-size: 50px;
+    letter-spacing: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 0.5
 }
 
 /* END TIMETABLES OPEN DAY */
