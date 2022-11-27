@@ -96,6 +96,10 @@ i {
 
 /* START NAV */
 
+.deactivateNav {
+    transform: translateY(max(-8vh, -70px));
+}
+
 .color-class-white {
     color: rgb(192, 192, 192);
 }
@@ -425,7 +429,6 @@ nav ul li a {
 .landing-square-desc {
     text-align: left;
     font-size: 20px;
-    text-transform: capitalize;
     font-weight: 400;
     margin-left: 16px;
     color: white;
@@ -725,3 +728,146 @@ strong {
 }
 
 /* END OFFERTA FORMATIVA */
+
+/* START OPEN DAY VIRTUALE */
+
+.open-day-virtuale-wrapper {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.full-screen-virtual-img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+}
+
+.overlay-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 40px;
+    top: 3%;
+    right: 3%;
+    transition: 
+        width 0.25s cubic-bezier(0.645,0.045,0.355,1), 
+        height 0.25s cubic-bezier(0.645,0.045,0.355,1);
+}
+
+.overlay-wrapper:hover {
+    transform: scale(1.1);
+}
+
+.overlay-wrapper .info-icon {
+    font-size: 50px;
+    position: absolute;
+}
+
+.overlay-wrapper.active {
+    border-radius: 20px;
+    height: 550px;
+    max-height: 80%;
+    width: max(460px, 35%);
+}
+
+.overlay-wrapper.active:hover {
+    transform: scale(1);
+}
+
+.overlay-wrapper.active .info-icon {
+    display: none;
+}
+
+.virtual-openday-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 0;
+    width: 100%;
+    opacity: 0;
+    transition: var(--transition);
+    transition-property: opacity;
+    transition-delay: 0.25s;
+    transform: scale(0);
+}
+
+.overlay-wrapper.active .virtual-openday-overlay {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.virtual-title-wrapper {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #dedede;
+}
+
+.title-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.virtual-title-wrapper h1 {
+    font-size: 48px;
+    margin: 0 0 0 4px;
+}
+
+.virtual-title-wrapper i {
+    font-size: 42px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.virtual-title-wrapper i:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.attibutes-list-wrapper {
+    margin-top: 24px;
+    width: 95%;
+}
+
+.attibutes-list-wrapper ul {
+    padding-left: 1.2em;
+}
+
+.paragraph-wrapper {
+    margin-top: 24px;
+    width: 95%;
+}
+
+.fullscreen-wrap i {
+    position: absolute;
+    transform: translatex(-200px);
+    bottom: 2%;
+    left: 2%;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.fullscreen-wrap.active i {
+    transform: translateX(0px);
+}
+
+.fullscreen-wrap i:hover {
+    transform: scale(1.2);
+}
+
+/* STOP OPEN DAY VIRTUALE */

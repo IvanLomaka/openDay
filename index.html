@@ -9,57 +9,57 @@
     <title>Liceo Duca Degli Abruzzi - Open day virtuale</title>
 </head>
 <body>
-    <input type="checkbox" id="nav" class="hidden">
+    <input type="checkbox" id="nav" class="hidden hide">
     <label for="nav" class="nav-btn" id="navActivation">
         <i class="burger-menu background-white"></i>
         <i class="burger-menu background-white"></i>
         <i class="burger-menu background-white"></i>
     </label>
 
-    <nav id="wrapperNav">
+    <nav id="wrapperNav" class="">
         <div class="logo">
             <a class="bottom-effect" href="https://www.liceoduca.edu.it/">D.A.</a>
         </div>
         <div class="nav-wrapper" id="navWrapper">
             <ul id="navUl">
-                <li><a class="bottom-effect" index="0" data-nav-a>Open-day online</a></li>
-                <li><a class="bottom-effect" index="1" data-nav-a>Open day in presenza</a></li>
-                <li><a class="bottom-effect" index="2" data-nav-a>Offerta formativa</a></li>
+                <li><a class="bottom-effect " index="0" data-nav-a>Open-day online</a></li>
+                <li><a class="bottom-effect " index="1" data-nav-a>Open day in presenza</a></li>
+                <li><a class="bottom-effect " index="2" data-nav-a>Offerta formativa</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="landing" data-section>
-        <div class="landing-square">
+    <section class="landing hide" data-section>
+        <div class="landing-square" id="openday-virtuale">
             <img src="./images/pexels-ali-ramazan-çiftçi-14140100.jpg" class="landing-background-img" alt="">
             <div class="landing-square-desc-wrapper">
                 <div class="landing-square-title above-overlay">
-                    <p>visita</p>
-                    <p>guidata</p> 
+                    <p>OPENDAY</p>
+                    <p>VIRTUALE</p> 
                 </div>
                 <div class="landing-square-point above-overlay">
                     ●
                 </div>
                 <div class="landing-square-desc above-overlay">
-                    Lorem ipsum dolor <br> sit amet consectetur.
+                    Clicca per visitare <br> la scuola da casa!
                 </div>
             </div>
             <div class="pop-up-arrow above-overlay">
                 <i class="ri-arrow-right-line"></i>
             </div>
         </div>
-        <div class="landing-square">
+        <div class="landing-square" id="openday-presenza">
             <img src="./images/pexels-céline-10066931.jpg" class="landing-background-img" alt="">
             <div class="landing-square-desc-wrapper">
                 <div class="landing-square-title above-overlay">
-                    <p>visita</p>
-                    <p>libera</p> 
+                    <p>OPENdAY IN</p>
+                    <p>presenza</p> 
                 </div>
                 <div class="landing-square-point above-overlay">
                     ●
                 </div>
                 <div class="landing-square-desc above-overlay">
-                    Lorem ipsum dolor <br> sit amet consectetur.
+                    Prenota una visita <br> in presenza
                 </div>
             </div>
             <div class="pop-up-arrow above-overlay">
@@ -68,8 +68,43 @@
         </div>
     </section>
 
-    <section class="open-day-virtuale-wrapper hide">
+    <section class="open-day-virtuale-wrapper">
+        <img src="./images/classroom.jpeg" alt="" class="full-screen-virtual-img">
 
+        <div class="overlay-wrapper" id="virtual-openday-overlay">
+            <i class="ri-information-line info-icon" id="activate-overlay"></i>
+
+            <div class="virtual-openday-overlay">
+                <div class="virtual-title-wrapper">
+                    <!-- <i class="ri-arrow-left-line"></i> -->
+                    <div class="title-wrap">
+                        <i class="ri-play-fill"></i>
+                        <i class="ri-stop-fill hide"></i>
+                        <h1>LA CLASSE</h1>
+                    </div>
+                    <i class="ri-arrow-right-line" title="Prossima stanza"></i>
+                </div>
+                <div class="attibutes-list-wrapper">
+                    <ul>
+                        <li><b>Classi:</b> 10</li>
+                        <li><b>Sedi:</b> 3</li>
+                        <li><b>Studenti:</b> 2003</li>
+                    </ul>
+                </div>
+                <div class="paragraph-wrapper">
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum exercitationem quis sint fugit quos nobis, deserunt quidem labore. Fugit, provident?
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos sed quia maiores nihil fugiat voluptate? Dicta quasi nesciunt numquam atque laborum accusamus distinctio sit? Laudantium nisi voluptatem voluptate commodi non!
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="fullscreen-wrap" id="fullscreen-wrap">
+            <i class="ri-fullscreen-line"></i>
+        </div>
     </section>
 
     <section class="open-day-presenza-wrapper hide" data-section>
