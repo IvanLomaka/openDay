@@ -109,10 +109,14 @@ let currentRoom = 0
 
 const allRooms = Object.keys(backgrounds)
 
+// textContent / innerHTML dell'overlay
+
+const paragraphWrapper = document.getElementById('paragraph-wrapper')
+const attibutesListWrapper = document.getElementById('attibutes-list-wrapper')
+const overlaysTitle = document.getElementById('overlays-title')
+
 nextRoomButton.addEventListener('click', () => {
     currentRoom ++
-
-    if(!backgrounds[allRooms[currentRoom + 1]]) nextRoomButton.textContent = 'Fine tour'
 
     if(!backgrounds[allRooms[currentRoom]]) {
 
@@ -122,10 +126,39 @@ nextRoomButton.addEventListener('click', () => {
         currentRoom = 0
         changeRoom(backgrounds[allRooms[currentRoom]])
         return
-    } // aggiungere qua codice rine tour
+    } else {
+        changeOverlayText(currentRoom)
+
+        if(!backgrounds[allRooms[currentRoom + 1]]) nextRoomButton.textContent = 'Fine tour'
+    }
 
     changeRoom(backgrounds[allRooms[currentRoom]])
 })
+
+function changeOverlayText(room) {
+
+    overlaysTitle.textContent = virtualOpenDayData[allRooms[room]].title
+
+    let list 
+
+    for(let i = 0; i < virtualOpenDayData[allRooms[room]].list.length; i++) {
+        if(i == 0) list = `<ul><li>${virtualOpenDayData[allRooms[room]].list[i]}</li>`
+        
+        else if(i == virtualOpenDayData[allRooms[room]].list.length - 1) list += `<li>${virtualOpenDayData[allRooms[room]].list[i]}</li></ul>`
+        
+        else list += `<li>${virtualOpenDayData[allRooms[room]].list[i]}</li>`
+    }
+    attibutesListWrapper.innerHTML = list
+
+    let para 
+
+    for(let i = 0; i < virtualOpenDayData[allRooms[room]].desc.length; i++) {
+        if(i == 0) para = `<p>${virtualOpenDayData[allRooms[room]].desc[i]}</p>`
+        else para += `<p>${virtualOpenDayData[allRooms[room]].desc[i]}</p>`
+    }
+    paragraphWrapper.innerHTML = para
+
+}
 
 
 
