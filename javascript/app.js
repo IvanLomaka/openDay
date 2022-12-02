@@ -119,6 +119,8 @@ nextRoomButton.addEventListener('click', () => {
         deactivateVirtualOpenDay()
         setTimeout(() => nextRoomButton.innerHTML = 'Prossima stanza <i class="ri-arrow-right-line" style="margin-left: 10px; font-size: 20px"></i>', 500);
         
+        currentRoom = 0
+        changeRoom(backgrounds[allRooms[currentRoom]])
         return
     } // aggiungere qua codice rine tour
 
