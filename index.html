@@ -9,7 +9,7 @@
     <title>Liceo Duca Degli Abruzzi - Open day virtuale</title>
 </head>
 <body>
-    <input type="checkbox" id="nav" class="hidden hide">
+    <input type="checkbox" id="nav" class="hidden">
     <label for="nav" class="nav-btn" id="navActivation">
         <i class="burger-menu background-white"></i>
         <i class="burger-menu background-white"></i>
@@ -22,14 +22,14 @@
         </div>
         <div class="nav-wrapper" id="navWrapper">
             <ul id="navUl">
-                <li><a class="bottom-effect " index="0" data-nav-a>Open-day online</a></li>
-                <li><a class="bottom-effect " index="1" data-nav-a>Open day in presenza</a></li>
-                <li><a class="bottom-effect " index="2" data-nav-a>Offerta formativa</a></li>
+                <li><a class="bottom-effect" index="0" data-nav-a>Open-day online</a></li>
+                <li><a class="bottom-effect" index="1" data-nav-a>Open day in presenza</a></li>
+                <li><a class="bottom-effect" index="2" data-nav-a>Offerta formativa</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="landing hide" data-section>
+    <section class="landing" data-section>
         <div class="landing-square" id="openday-virtuale">
             <img src="./images/pexels-ali-ramazan-çiftçi-14140100.jpg" class="landing-background-img" alt="">
             <div class="landing-square-desc-wrapper">
@@ -68,8 +68,9 @@
         </div>
     </section>
 
-    <section class="open-day-virtuale-wrapper">
-        <img src="./images/classroom.jpeg" alt="" class="full-screen-virtual-img">
+    <section class="open-day-virtuale-wrapper hide" id="open-day-virtuale-wrapper">
+        <!-- <img src="./images/classroom.jpeg" alt="" class="full-screen-virtual-img"> -->
+        <div id="three-js-wrapper" style="overflow: hidden;"></div>
 
         <div class="overlay-wrapper" id="virtual-openday-overlay">
             <i class="ri-information-line info-icon" id="activate-overlay"></i>
@@ -82,7 +83,7 @@
                         <i class="ri-stop-fill hide"></i>
                         <h1>LA CLASSE</h1>
                     </div>
-                    <i class="ri-arrow-right-line" title="Prossima stanza"></i>
+                    <i class="ri-close-fill" title="Chiudi overlay" id="fullscreen-wrap"></i>
                 </div>
                 <div class="attibutes-list-wrapper">
                     <ul>
@@ -99,11 +100,8 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos sed quia maiores nihil fugiat voluptate? Dicta quasi nesciunt numquam atque laborum accusamus distinctio sit? Laudantium nisi voluptatem voluptate commodi non!
                     </p>
                 </div>
+                <button id="next-room">Prossima stanza <i class="ri-arrow-right-line" style="margin-left: 10px; font-size: 20px"></i></button>
             </div>
-        </div>
-        
-        <div class="fullscreen-wrap" id="fullscreen-wrap">
-            <i class="ri-fullscreen-line"></i>
         </div>
     </section>
 
@@ -205,6 +203,10 @@
 
     </section>
 
-    <script src="./javascript/app.js"></script>
+    <section class="super-overlay" id="super-overlay">
+
+    </section>
+
+    <script type="module" src="./javascript/app.js"></script>
 </body>
 </html>

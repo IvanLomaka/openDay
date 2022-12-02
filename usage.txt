@@ -1,0 +1,77 @@
+Bella Ivan 🤙
+
+usa "startRender(from)" per fare partire il loop del render
+
+quando il render è attivo usa "changeRoom(to)" per cambiare stanza
+
+il parametro "to" e il parametro "from" devi cambiarli con:
+ - backgrounds.classroom
+ - backgrounds.labChem1
+ - backgrounds.labChem2
+ - backgrounds.labBio
+ - backgrounds.labRocks
+ - backgrounds.labInfo
+ - backgrounds.labRob
+ - backgrounds.gym
+in base alla stanza a cui devi passare (parametro "to" per changeRoom)
+o alla stanza in cui vuoi cominciare (parametro "from" per startRender)
+
+
+usa "stopRender()" per stoppare il loop del render quando si è
+in una pagina diversa cosi non si spreca la cpu del pc per niente
+
+
+#piccolo esempio di codice
+
+(bottone che porta alla pagina col render).addEventListener('click', () => {
+    startRender(backgrounds.(stanza))
+})
+
+(bottone per cambiare stanza).addEventListener('click', () => {
+    changeRoom(backgrounds.(stanza))
+})
+
+(bottone che porta a una pagina che non sia render).addEventListener('click', () => {
+    stopRender()
+})
+
+
+
+
+!!! attenzione !!!
+ho aggiunto sul file script "type="module"" perchè cosi mi viene più facile caricare i moduli di threejs
+
+penso che tu già lo sappia ma per sicurezza lo scrivo, quando c'è "type="module"" non puoi accedere alle variabili
+dalla console e neanche da altri file js / html ammeno che non fai import module del file js (anche se sul client non ho mai provato quindi non sono sicuro di come funzioni)
+
+se questo dovesse risutare un problema scrivimi ma non penso
+(inoltre spero non lo sia perchè pensavo su partypay di usare tutti type module così è più difficile modificare variabili dalla console, se non impossibile (non ne sono sicuro che sia impossibile))
+
+
+
+suggerimenti:
+ - mettere "overflow: hidden;" al posto di "overflow-x: hidden;" in tutte le pagine apparte in quelle in cui si può scorrere:
+   tipo nella pagina offerta formativa -> "overflow-x: hidden;"
+   nella pagina del render -> "overflow: hidden;"
+   (fortemente consigliato perchè ora quando fa l'animazione compare la barra di lato)
+
+ - cambiare il title della pagina quando passi da una pagina all'altra
+
+ - spostare il pulsante per restringere la finestra informativa della stanza in alto a destra dentro il riquadro bianco e magari cambiare l'icona con una x o qualcosa di simile
+   (in basso a sinistra non si vede infatti non me n'ero accorto all'inizio che c'era)
+
+ - rifare le immagini e mandarmele in alta qualita via email :)
+   (anche se sono un po buggatine non è male l'effetto finale ma ora sono completamente sgranate)
+
+
+quando mi rimandi le immagini nuove le reinserisco e creo un piccolo script che le allinei nella parte iniziale migliore
+(per esempio nella classe quando entri si allinea alla lavagna e all'orizzonte o quando entri nella palestra si allinea al canestro)
+
+
+su github c'è ancora .DS_Store, anche se l'hai levato con gitignore probabilmente devi levarlo manualmente, vedi tu
+
+ovviamente se vuoi leva le separazioni sul codice che ho scritto con i nomi, l'ho fatto solo perche si veda meglio quello che ho aggiunto io
+
+
+dimmi se qualcosa non funziona,
+Tommaso 🤓

@@ -1,3 +1,31 @@
+/* MORO */
+
+#three-js-canvas {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    object-fit: cover;
+
+}
+
+canvas {
+    transition: opacity 1s ease-in-out, filter 1s ease-in-out, transform 1s ease-in-out;
+}
+
+canvas.blur {
+    filter: blur(100px);
+    -webkit-filter: blur(100px);
+    opacity: 0.7;
+    transform: scale(1.3, 1.3);
+}
+
+canvas:active {
+    cursor: grabbing;
+}
+
+
+/* IVAN */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Satisfy&display=swap');
 
 * {
@@ -97,7 +125,7 @@ i {
 /* START NAV */
 
 .deactivateNav {
-    transform: translateY(max(-8vh, -70px));
+    transform: translateY(-1000px);
 }
 
 .color-class-white {
@@ -735,6 +763,7 @@ strong {
     height: 100vh;
     width: 100%;
     position: relative;
+    overflow-x: hidden;
 }
 
 .full-screen-virtual-img {
@@ -758,11 +787,9 @@ strong {
     right: 3%;
     transition: 
         width 0.25s cubic-bezier(0.645,0.045,0.355,1), 
-        height 0.25s cubic-bezier(0.645,0.045,0.355,1);
-}
+        height 0.25s cubic-bezier(0.645,0.045,0.355,1),
+        border-radius 0.25s cubic-bezier(0.645,0.045,0.355,1);
 
-.overlay-wrapper:hover {
-    transform: scale(1.1);
 }
 
 .overlay-wrapper .info-icon {
@@ -772,7 +799,7 @@ strong {
 
 .overlay-wrapper.active {
     border-radius: 20px;
-    height: 550px;
+    height: 480px;
     max-height: 80%;
     width: max(460px, 35%);
 }
@@ -790,13 +817,30 @@ strong {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 70px 0;
     width: 100%;
     opacity: 0;
     transition: var(--transition);
     transition-property: opacity;
     transition-delay: 0.25s;
     transform: scale(0);
+}
+
+.virtual-openday-overlay button {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    color: black;
+    padding: 12px 20px;
+    margin-top: 16px;
+    border: solid 1px;
+    border-radius: 4px;
+    font-size: inherit;
+    background-color: transparent;
+    transition: var(--transition);
+}
+
+.virtual-openday-overlay button:hover {
+    background-color: rgb(211, 211, 211);
 }
 
 .overlay-wrapper.active .virtual-openday-overlay {
@@ -871,3 +915,17 @@ strong {
 }
 
 /* STOP OPEN DAY VIRTUALE */
+
+.super-overlay {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+}
+
+.super-overlay.active {
+    z-index: 90;
+    background-color: #000;
+}
