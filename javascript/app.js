@@ -81,7 +81,7 @@ function changeRoom(to) {
         scene.background = to
         camera.position.set(0, 0, 10);
         renderer.domElement.classList.remove("blur")
-    }, 1000)
+    }, 750)
 }
 
 function startRender(from) {
@@ -121,10 +121,16 @@ nextRoomButton.addEventListener('click', () => {
     if(!backgrounds[allRooms[currentRoom]]) {
 
         deactivateVirtualOpenDay()
-        setTimeout(() => nextRoomButton.innerHTML = 'Prossima stanza <i class="ri-arrow-right-line" style="margin-left: 10px; font-size: 20px"></i>', 500);
-        
+        setTimeout(() => {
+            nextRoomButton.innerHTML = 'Prossima stanza <i class="ri-arrow-right-line" style="margin-left: 10px; font-size: 20px"></i>'
+            changeOverlayText(currentRoom)
+        }, 500);
+
         currentRoom = 0
+
+        changeOverlayText(currentRoom)
         changeRoom(backgrounds[allRooms[currentRoom]])
+
         return
     } else {
         changeOverlayText(currentRoom)
@@ -204,6 +210,15 @@ function clickFuncFornavButton() {
     });
 }
 
+// function to close navbar on mobile
+
+function closeNavBar() {
+    navWrapper.classList.remove('nav-wrapper-active')
+    navUlList.forEach(a => {
+        a.classList.remove('nav-wrapper-ul-active')
+    });
+}
+
 // activate the nav
 
 window.addEventListener('scroll', () => {
@@ -248,8 +263,6 @@ navUlList.forEach(button => {
 function changeNavColors(button) {
     if(!button) return
 
-    console.log('hi')
-
     navUlList.forEach(e => {
         e.classList.remove(`color-class-${color}`)
         e.classList.remove(`active-black`)
@@ -272,7 +285,7 @@ function changeNavColors(button) {
 
     addRemoveSections(parseInt(button.getAttribute('index')))
 
-    clickFuncFornavButton()
+    closeNavBar()
     nav.checked = false
 }
 
@@ -335,3 +348,5 @@ activateOverlayButton.addEventListener('click', () => {
 deactivateOverlayButton.addEventListener('click', () => {
     virtualOverlay.classList.remove('active')
 })
+
+changeNavColors(navUlList[2])

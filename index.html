@@ -16,7 +16,7 @@
         <i class="burger-menu background-white"></i>
     </label>
 
-    <nav id="wrapperNav" class="">
+    <nav id="wrapperNav">
         <div class="logo">
             <a class="bottom-effect" href="https://www.liceoduca.edu.it/">D.A.</a>
         </div>
@@ -29,7 +29,7 @@
         </div>
     </nav>
 
-    <section class="landing" data-section>
+    <section class="landing hide" data-section>
         <div class="landing-square" id="openday-virtuale">
             <img src="./images/pexels-ali-ramazan-çiftçi-14140100.jpg" class="landing-background-img" alt="">
             <div class="landing-square-desc-wrapper">
@@ -199,14 +199,43 @@
         </button>
     </section>
 
-    <section class="offerta-formativa hide" data-section>
-
+    <section class="offerta-formativa" data-section>
+        <div class="experiences-description-wrapper">
+            <div class="experiences-effect-wrapper" id="experiences-effect-wrapper">
+                <div class="experiences-buttons-wrapper" id="experiences-buttons-wrapper"></div>
+                <span id="experiencesSpan" class="js-scroll fade-in"></span>
+            </div>
+            <!-- <div class="experiences-single-description">
+                <h1 id="experiences-title" class="js-scroll fade-in-bottom"></h1>
+                <h2 id="experiences-timespan" class="js-scroll fade-in-bottom"></h2>
+                <ol id="experiences-description" class="js-scroll fade-in-bottom"></ol>
+                <ul id="experiences-skills" class="js-scroll fade-in-bottom"></ul>
+            </div> -->
+            <h1 class="title" style="margin-top: 1.5em;">Liceo Scientifico</h1>
+            <p class="paragraph-text">Il <b>liceo scientifico</b> è perfetto per</p>
+            <ul class="list-style">
+                <li>approfondire il nesso tra <b>scienza</b> e <b>tradizione umanistica</b></li>
+                <li>competenze per seguire lo sviluppo della ricerca scientifica e tecnologica, sia in <b>chiave ipotetico-deduttiva</b> che <b>tecnico applicativa</b></li>
+            </ul>
+            <p class="paragraph-text">Questo percorso di studi ti <b>permette l'accesso a tutti i corsi universitari</b></p>
+            <h2 class="subtitle">Consigliato a tutti quelli che...</h2>
+            <ul class="list-style">
+                <li>buone <b>conoscenze di base</b> nelle diverse discipline</li>
+                <li>discrete capacità di <b>analisi</b> e di <b>sintesi</b></li>
+                <li><b>autonomia</b> nello svolgimento dei compitl e nello studio</li>
+                <li><b>impegno</b> costante e sistematico nell'esecuzione del lavoro domestico</li>
+                <li>interesse per le tematiche scientifiche</li>
+                <li><b>curiosità</b> culturale</li>
+            </ul>
+            <div class="quadro-orario">
+                <img src="./images/orari-scientifico.png" alt="">
+            </div>
+        </div>
     </section>
 
-    <section class="super-overlay" id="super-overlay">
+    <section class="super-overlay" id="super-overlay"></section>
 
-    </section>
-
+    <script src="./javascript/menu.js"></script>
     <script src="./javascript/data.js"></script>
     <script type="module" src="./javascript/app.js"></script>
 </body>

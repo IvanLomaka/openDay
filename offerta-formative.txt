@@ -1,0 +1,19 @@
+            <h1 class="title" style="margin-top: 1.5em;">Liceo Scientifico</h1>
+            <p class="paragraph-text">Il <b>liceo scientifico</b> è perfetto per</p>
+            <ul class="list-style">
+                <li>approfondire il nesso tra <b>scienza</b> e <b>tradizione umanistica</b></li>
+                <li>competenze per seguire lo sviluppo della ricerca scientifica e tecnologica, sia in <b>chiave ipotetico-deduttiva</b> che <b>tecnico applicativa</b></li>
+            </ul>
+            <p class="paragraph-text">Questo percorso di studi ti <b>permette l'accesso a tutti i corsi universitari</b></p>
+            <h2 class="subtitle">Consigliato a tutti quelli che...</h2>
+            <ul class="list-style">
+                <li>buone <b>conoscenze di base</b> nelle diverse discipline</li>
+                <li>discrete capacità di <b>analisi</b> e di <b>sintesi</b></li>
+                <li><b>autonomia</b> nello svolgimento dei compitl e nello studio</li>
+                <li><b>impegno</b> costante e sistematico nell'esecuzione del lavoro domestico</li>
+                <li>interesse per le tematiche scientifiche</li>
+                <li><b>curiosità</b> culturale</li>
+            </ul>
+            <div class="quadro-orario">
+                <img src="./images/orari-scientifico.png" alt="">
+            </div>
