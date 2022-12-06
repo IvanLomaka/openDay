@@ -2,81 +2,34 @@
 
 const data = [
     {
-        buttonText: "Present",
-        title: "Mobile app - Website - A.I.",
-        timespan: "DEC 2021 - PRESENT",
-        description: [
-            "At the moment I am working on several projects that I still have no intention of revealing because they are still in the design phase.",
-            "In this discipline, the important thing is to constantly improve by always looking for new projects while keeping alive the interest in programming.",
-        ],
-        skills: [
-            "React Native",
-            "Expo",
-            "Firebase",
-            "Node.js",
-        ],
+        buttonText: "Scientifico",
+        innerHTMLCreate: '<h1 class="title" style="margin-top: 1.5em;">Liceo Scientifico</h1><p class="paragraph-text">Il <b>liceo scientifico</b> è perfetto per</p><ul class="list-style">    <li>approfondire il nesso tra <b>scienza</b> e <b>tradizione umanistica</b></li>    <li>competenze per seguire lo sviluppo della ricerca scientifica e tecnologica, sia in <b>chiave ipotetico-deduttiva</b> che <b>tecnico applicativa</b></li></ul><p class="paragraph-text">Questo percorso di studi ti <b>permette l\'accesso a tutti i corsi universitari</b></p><h2 class="subtitle">Consigliato a tutti quelli che...</h2><ul class="list-style">    <li>buone <b>conoscenze di base</b> nelle diverse discipline</li>    <li>discrete capacità di <b>analisi</b> e di <b>sintesi</b></li>    <li><b>autonomia</b> nello svolgimento dei compitl e nello studio</li>    <li><b>impegno</b> costante e sistematico nell\'esecuzione del lavoro domestico</li>    <li>interesse per le tematiche scientifiche</li>    <li><b>curiosità</b> culturale</li></ul><div class="quadro-orario">    <img src="./images/orari-scientifico.png" alt=""></div>'
     },
     {
-        buttonText: "Murple",
-        title: "Discord bot",
-        timespan: "JUNE - JULY 2021",
-        description: [
-            "Murple is a discord bot that can play music, search for the lyrics of a song, save a recording, and has a system of levels that allows you to make a ranking of the users of a server.",
-            "From this project, I learned to use the basics of MongoDB, a NoSQL database.",
-            "The libraries on which this bot rests are not stable and must be overhauled to keep the bot active. At the moment, it is not constantly reviewed.",
-        ],
-        skills: [
-            "Discord.js",
-            "Distube",
-            "MongoDB",
-        ],
+        buttonText: "Scienze Applicate",
+        innerHTMLCreate: `<h1 class="title" style="margin-top: 1.5em;">Liceo delle Scienze Applicate</h1><p class="paragraph-text">Il <b>liceo delle scienze applicate</b> è perfetto per</p><ul class="list-style">    <li>comprendere il ruolo della tecnologia come mediazione fra scienza e vita quotidiana</li>    <li>sviluppare competenze particolarmente avanzate in campo scientifico-tecnologico</li>    <li>scienze matematiche, fisiche, chimiche, biologiche e informatica</li></ul><p class="paragraph-text">Questo percorso di studi ti <b>permette l'accesso a tutti i corsi universitari</b></p><h2 class="subtitle">Consigliato a tutti quelli che...</h2><ul class="list-style">    <li>interesse all'approfondimento dell'<b>area scientifico-matematica</b></li>    <li>attenzione alle <b>innovazioni</b> ed alle applicazioni in campo <b>scientifico - tecnologico</b></li>    <li>curiosità verso la <b>ricerca scientifica</b></li>    <li>ottimo livello di conoscenze e competenze in ambito <b>logico-matematico e scientifico</b></li>    <li>buon livello di conoscenze e competenze in ambito <b>linguistico e letterario</b></li></ul><div class="quadro-orario">    <img src="./images/orari-applicate.png" alt=""></div>`
     },
     {
-        buttonText: "Chess",
-        title: "Chess A.I. - Multiplayer online",
-        timespan: "FEB - APR 2021",
-        description: [
-            "Chess was the first project that I programmed entirely by myself without following any tutorials. All the challenges that came with designing the game pushed me even more into the making of the software.",
-            "The artificial intelligence against which you can clash playing on the site can respond to moves thanks to minimax. In short, it is an algorithm that allows you to maximize the minimum gain (the victory).",
-            "For the multiplayer, I used Socket.io. The game creates a custom room for every user who enters the multiplayer then it's on the player to share the code with his opponent."
-        ],
-        skills: [
-            "Node.js",
-            "Socket.io",
-            "Minimax",
-        ],
-    }
+        buttonText: "Economico sociale",
+        innerHTMLCreate: `<h1 class="title" style="margin-top: 1.5em;">Liceo Economico Sociale</h1><p class="paragraph-text">Il <b>liceo economico sociale</b> è perfetto per</p><ul class="list-style">    <li>cogliere nessi tra le <b>scienze umane</b></li>    <li>osservare, comprendere e analizzare le <b>problematiche attuali</b>. sia in chiave locale che globale</li></ul><p class="paragraph-text">    Il piano di studio è irrobustito dal legame fecondo tra <b>preparazione scientifica</b> e <b>conoscenze linguistiche</b>, e da chiavi di lettura particolarmente efficaci della realtà <b>contemporanea</b>.</p><h2 class="subtitle">Prerequisiti</h2><ul class="list-style" style="margin-bottom: 1em;">    <li>buona <b>motivazione</b> allo studio perché sempre di un liceo parliamo</li>    <li>capacità di <b>analisi</b> e <b>sintesi</b></li>    <li>interesse per la <b>ricerca sperimentale</b> ricerca sperimentale nell'ambito dei processi sociali ed economici e della evoluzione giuridica</li>    <li><b>inglese + spagnolo/tedesco</b></li></ul><h2 class="subtitle">Consigliato a tutti quelli che...</h2><ul class="list-style">    <li>buona <b>motivazione</b> allo studio perché sempre di un liceo parliamo</li>    <li>capacità di <b>analisi</b> e <b>sintesi</b></li>    <li>interesse per la <b>ricerca sperimentale</b> ricerca sperimentale nell'ambito dei processi sociali ed economici e della evoluzione giuridica</li>    <li><b>inglese + spagnolo/tedesco</b></li></ul><div class="quadro-orario">    <img src="./images/orari-economico-sociale.png" alt=""></div>`
+    },
+    {
+        buttonText: "Scienze Umane",
+        innerHTMLCreate: `<h1 class="title" style="margin-top: 1.5em;">Liceo delle Scienze Umane</h1><p class="paragraph-text">Il <b>liceo delle scienze umane</b> è perfetto per</p><ul class="list-style">    <li>approfondire temi/teorie della costruzione dell'identità personale. delle relazioni umane e sociali</li>    <li>studiare antropologia, psicologia, sociologia, pedagogia, diritto.</li></ul><h2 class="subtitle">Consigliato a tutti quelli che...</h2><ul class="list-style">    <li>vogliono coniugare cultura <b>umanistica</b> e cultura <b>scientifica</b></li>    <li>si ha una buona motivazione allo studio</li>    <li>si un'interesse all'analisi e all'approfondimento di ambito <b>psico-sociologico</b> e <b>socio politico</b>, con propensione al mondo della formazione, sia dell'infanzia che adulta</li>    <li>si ha <b>curiosità</b> per le scienze della comunicazione</li></ul><p class="paragraph-text">Questo percorso di studi ti <b>permette l'accesso a tutti i corsi universitari</b></p><div class="quadro-orario">    <img src="./images/orari-scienze-umane.png" alt=""></div>`
+    },
+    {
+        buttonText: "Linguistico",
+        innerHTMLCreate: `<h1 class="title" style="margin-top: 1.5em;">Liceo Linguistico</h1><p class="paragraph-text">Il <b>liceo linguistico</b> è perfetto per</p><ul class="list-style">    <li>chi vuole studiare tre lingue</li>    <li>chi vuole sapersi rapportare in forma critica e dialettica alle altre culture</li>    <li>studiare l'inglese, francese, tedesco, spagnolo e russo</li>    <li>studiare con il metodo CLIL</li>    <li>efettuare soggiorni all'estero, anche in modalità PCTO</li></ul><h2 class="subtitle" style="margin-bottom: 1em;">Consigliato a tutti quelli che...</h2><ul class="list-style">    <li>curiosità verso le culture diverse dalla propria</li>    <li>accettazione dell'altro da sé</li>    <li>disponibilità a viaggi e scambi</li>    <li>essere a proprio agio nella comunicazione scritta e orale in una lingua straniera</li>    <li>buona memoria per suoni, parole e modi di dire</li>    <li>interesse per la letteratura classica/moderna</li>    <li>buone capacità logiche per l'acquisizione delle strutture linguistiche e dei procedimenti matematici</li></ul><h2 class="subtitle" style="margin-bottom: 1em;">Maturità esabac</h2><ul class="list-style">    <li>chi: studenti con francese come L2</li>    <li>cosa: conseguimento del doppio diploma di maturità, italiana e francese (baccalaureato)</li>    <li>perché?: iscrizione direttamente ad una università francese</li></ul><h2 class="subtitle" style="margin-bottom: 1em;">Abbinamenti lingue</h2><ul class="list-style">    <li>INGLESE - FRANCESE - SPAGNOLO</li>    <li>INGLESE - RUSSO - SPAGNOLO</li>    <li>INGLESE - TEDESCO - SPAGNOLO</li></ul><div class="quadro-orario">    <img src="./images/orari-linguistico.png" alt=""></div>`
+    },
 ]
 
 // write experiences
 
 const experiencesButtonsWrapper = document.getElementById('experiences-buttons-wrapper')
-const experiencesTitle = document.getElementById('experiences-title')
-const experiencesTimespan = document.getElementById('experiences-timespan')
-const experiencesDescription = document.getElementById('experiences-description')
-const experiencesSkills = document.getElementById('experiences-skills')
+const offertaFormativaWrapper = document.getElementById('offerta-formativa-desc')
 
 const changeExperienceDescription = (i) => {
-    experiencesTitle.textContent = data[i].title
-    experiencesTimespan.textContent = data[i].timespan
-
-    experiencesDescription.replaceChildren()
-
-    for(let j = 0; j < data[i].description.length; j++) {
-        let li = document.createElement('li')
-        li.appendChild(document.createTextNode(`${data[i].description[j]}`))
-
-        experiencesDescription.appendChild(li)
-    }
-
-    experiencesSkills.replaceChildren()
-
-    for(let j = 0; j < data[i].skills.length; j++) {
-        let li = document.createElement('li')
-        li.appendChild(document.createTextNode(`${data[i].skills[j]}`))
-
-        experiencesSkills.appendChild(li)
-    }
+    offertaFormativaWrapper.innerHTML = data[i].innerHTMLCreate
 }
 
 const writeExperiences = () => {
@@ -125,5 +78,5 @@ const changeActiveExperiencesBtn = (i) => {
 }
 
 window.addEventListener('resize', () => {
-    experiencesSpan.style.left = `${experiencesList[0].offsetWidth}px`
+    experiencesSpan.style.top = `${experiencesList[0].offsetHeight}px`
 })
