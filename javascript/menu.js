@@ -32,6 +32,8 @@ const changeExperienceDescription = (i) => {
     offertaFormativaWrapper.innerHTML = data[i].innerHTMLCreate
 }
 
+const experiencesWrapper = document.getElementById('experiences-description-wrapper')
+
 const writeExperiences = () => {
     changeExperienceDescription(0)
 
@@ -40,8 +42,13 @@ const writeExperiences = () => {
         let div = document.createElement('div')
         div.classList.add('js-scroll', 'fade-in-bottom')
         div.appendChild(document.createTextNode(`${data[i].buttonText}`))
-        
+
         div.dataset.experiences = true
+    
+        if(window.innerWidth > 864) div.style.width = `${experiencesWrapper.offsetWidth / data.length}px`
+        else div.style.width = '100%'
+
+        console.log(div.style.width)
 
         experiencesButtonsWrapper.appendChild(div)
     }
@@ -51,16 +58,24 @@ writeExperiences()
 
 // experiences animations
 
-const experiencesList = document.querySelectorAll('[data-experiences]')
 const experiencesSpan = document.getElementById('experiencesSpan')
-
+const experiencesList = document.querySelectorAll('[data-experiences]')
 const experiencesEffectWrapper = document.getElementById('experiences-effect-wrapper')
 
-experiencesEffectWrapper.style.width = `${experiencesList[0].offsetWidth * data.length}px`
+// experiencesEffectWrapper.style.width = `${experiencesList[0].offsetWidth * data.length}px`
 
 experiencesList[0].classList.add('active')
-experiencesSpan.style.left = `0px`
-experiencesSpan.style.top = `${experiencesList[0].offsetHeight}px`
+
+if(window.innerWidth > 864) {
+    experiencesSpan.style.width = `${experiencesWrapper.offsetWidth / data.length}px`
+    experiencesSpan.style.left = `0px`
+    experiencesSpan.style.top = `${experiencesList[0].offsetHeight}px`
+} else {
+    experiencesSpan.style.left = `${experiencesList[0].offsetWidth}px`
+    experiencesSpan.style.top = `0px`
+}
+
+let nowActive = 0
 
 experiencesList.forEach((element, i) => {
     element.addEventListener('click', () => {
@@ -69,7 +84,15 @@ experiencesList.forEach((element, i) => {
 })
 
 const changeActiveExperiencesBtn = (i) => {
-    experiencesSpan.style.left = `${experiencesList[0].offsetWidth * i}px`
+    nowActive = i
+
+    if(window.innerWidth > 864) {
+        experiencesSpan.style.left = `${experiencesList[0].offsetWidth * i}px`
+        experiencesSpan.style.top = `${experiencesList[0].offsetHeight}px`
+    } else {
+        experiencesSpan.style.left = `${experiencesList[0].offsetWidth}px`
+        experiencesSpan.style.top = `${experiencesList[0].offsetHeight * i}px`
+    }
 
     experiencesList.forEach((element) => element.classList.remove('active'))
     changeExperienceDescription(i)
@@ -78,5 +101,22 @@ const changeActiveExperiencesBtn = (i) => {
 }
 
 window.addEventListener('resize', () => {
-    experiencesSpan.style.top = `${experiencesList[0].offsetHeight}px`
+    changeButtonSize()
 })
+
+function changeButtonSize() {
+    experiencesList.forEach((e) => {
+        if(window.innerWidth > 864) e.style.width = `${experiencesWrapper.offsetWidth / data.length}px`
+        else e.style.width = '100%'
+    })
+
+    setTimeout(() => {
+        if(window.innerWidth > 864) {
+            experiencesSpan.style.width = `${experiencesWrapper.offsetWidth / data.length}px`
+        } else {
+            experiencesSpan.style.width = `2px`
+        }
+
+        changeActiveExperiencesBtn(nowActive)   
+    }, 300);
+}
