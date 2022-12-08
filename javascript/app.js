@@ -289,10 +289,17 @@ function changeNavColors(button) {
     nav.checked = false
 }
 
+// init page checker
+let pageInitialized = false
+
 function addRemoveSections(i) {
     dataSections.forEach(e => e.classList.add('hide'))
     if(i == -1) return
     dataSections[i].classList.remove('hide')
+    if(i == 2 && !pageInitialized) {
+        initPage()
+        pageInitialized = !pageInitialized
+    }
 }
 
 // activate overlay in virtual tour
@@ -348,5 +355,3 @@ activateOverlayButton.addEventListener('click', () => {
 deactivateOverlayButton.addEventListener('click', () => {
     virtualOverlay.classList.remove('active')
 })
-
-changeNavColors(navUlList[2])

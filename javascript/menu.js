@@ -23,100 +23,100 @@ const data = [
     },
 ]
 
-// write experiences
-
-const experiencesButtonsWrapper = document.getElementById('experiences-buttons-wrapper')
-const offertaFormativaWrapper = document.getElementById('offerta-formativa-desc')
-
-const changeExperienceDescription = (i) => {
-    offertaFormativaWrapper.innerHTML = data[i].innerHTMLCreate
-}
-
-const experiencesWrapper = document.getElementById('experiences-description-wrapper')
-
-const writeExperiences = () => {
-    changeExperienceDescription(0)
-
-    for(let i = 0; i < data.length; i++) {
-        // side menu
-        let div = document.createElement('div')
-        div.classList.add('js-scroll', 'fade-in-bottom')
-        div.appendChild(document.createTextNode(`${data[i].buttonText}`))
-
-        div.dataset.experiences = true
+const initPage = () => {
+    // write experiences
     
-        if(window.innerWidth > 864) div.style.width = `${experiencesWrapper.offsetWidth / data.length}px`
-        else div.style.width = '100%'
-
-        console.log(div.style.width)
-
-        experiencesButtonsWrapper.appendChild(div)
+    const experiencesButtonsWrapper = document.getElementById('experiences-buttons-wrapper')
+    const offertaFormativaWrapper = document.getElementById('offerta-formativa-desc')
+    
+    const changeExperienceDescription = (i) => {
+        offertaFormativaWrapper.innerHTML = data[i].innerHTMLCreate
     }
-}
-
-writeExperiences()
-
-// experiences animations
-
-const experiencesSpan = document.getElementById('experiencesSpan')
-const experiencesList = document.querySelectorAll('[data-experiences]')
-const experiencesEffectWrapper = document.getElementById('experiences-effect-wrapper')
-
-// experiencesEffectWrapper.style.width = `${experiencesList[0].offsetWidth * data.length}px`
-
-experiencesList[0].classList.add('active')
-
-if(window.innerWidth > 864) {
-    experiencesSpan.style.width = `${experiencesWrapper.offsetWidth / data.length}px`
-    experiencesSpan.style.left = `0px`
-    experiencesSpan.style.top = `${experiencesList[0].offsetHeight}px`
-} else {
-    experiencesSpan.style.left = `${experiencesList[0].offsetWidth}px`
-    experiencesSpan.style.top = `0px`
-}
-
-let nowActive = 0
-
-experiencesList.forEach((element, i) => {
-    element.addEventListener('click', () => {
-        changeActiveExperiencesBtn(i)
-    })
-})
-
-const changeActiveExperiencesBtn = (i) => {
-    nowActive = i
-
+    
+    const experiencesWrapper = document.getElementById('experiences-description-wrapper')
+    
+    const writeExperiences = () => {
+        changeExperienceDescription(0)
+    
+        for(let i = 0; i < data.length; i++) {
+            // side menu
+            let div = document.createElement('div')
+            div.classList.add('js-scroll', 'fade-in-bottom')
+            div.appendChild(document.createTextNode(`${data[i].buttonText}`))
+        
+            div.dataset.experiences = true
+        
+            if(window.innerWidth > 864) div.style.width = `${experiencesWrapper.offsetWidth / data.length}px`
+            else div.style.width = '100%'
+        
+            experiencesButtonsWrapper.appendChild(div)
+        }
+    }
+    
+    writeExperiences()
+    
+    // experiences animations
+    
+    const experiencesSpan = document.getElementById('experiencesSpan')
+    const experiencesList = document.querySelectorAll('[data-experiences]')
+    const experiencesEffectWrapper = document.getElementById('experiences-effect-wrapper')
+    
+    // experiencesEffectWrapper.style.width = `${experiencesList[0].offsetWidth * data.length}px`
+    
+    experiencesList[0].classList.add('active')
+    
     if(window.innerWidth > 864) {
-        experiencesSpan.style.left = `${experiencesList[0].offsetWidth * i}px`
+        experiencesSpan.style.width = `${experiencesWrapper.offsetWidth / data.length}px`
+        experiencesSpan.style.left = `0px`
         experiencesSpan.style.top = `${experiencesList[0].offsetHeight}px`
     } else {
         experiencesSpan.style.left = `${experiencesList[0].offsetWidth}px`
-        experiencesSpan.style.top = `${experiencesList[0].offsetHeight * i}px`
+        experiencesSpan.style.top = `0px`
     }
-
-    experiencesList.forEach((element) => element.classList.remove('active'))
-    changeExperienceDescription(i)
-
-    experiencesList[i].classList.add('active')
-}
-
-window.addEventListener('resize', () => {
-    changeButtonSize()
-})
-
-function changeButtonSize() {
-    experiencesList.forEach((e) => {
-        if(window.innerWidth > 864) e.style.width = `${experiencesWrapper.offsetWidth / data.length}px`
-        else e.style.width = '100%'
+    
+    let nowActive = 0
+    
+    experiencesList.forEach((element, i) => {
+        element.addEventListener('click', () => {
+            changeActiveExperiencesBtn(i)
+        })
     })
-
-    setTimeout(() => {
+    
+    const changeActiveExperiencesBtn = (i) => {
+        nowActive = i
+    
         if(window.innerWidth > 864) {
-            experiencesSpan.style.width = `${experiencesWrapper.offsetWidth / data.length}px`
+            experiencesSpan.style.left = `${experiencesList[0].offsetWidth * i}px`
+            experiencesSpan.style.top = `${experiencesList[0].offsetHeight}px`
         } else {
-            experiencesSpan.style.width = `2px`
+            experiencesSpan.style.left = `${experiencesList[0].offsetWidth}px`
+            experiencesSpan.style.top = `${experiencesList[0].offsetHeight * i}px`
         }
-
-        changeActiveExperiencesBtn(nowActive)   
-    }, 300);
+    
+        experiencesList.forEach((element) => element.classList.remove('active'))
+        changeExperienceDescription(i)
+    
+        experiencesList[i].classList.add('active')
+    }
+    
+    window.addEventListener('resize', () => {
+        changeButtonSize()
+    })
+    
+    function changeButtonSize() {
+        experiencesList.forEach((e) => {
+            if(window.innerWidth > 864) e.style.width = `${experiencesWrapper.offsetWidth / data.length}px`
+            else e.style.width = '100%'
+        })
+    
+        setTimeout(() => {
+            if(window.innerWidth > 864) {
+                experiencesSpan.style.width = `${experiencesWrapper.offsetWidth / data.length}px`
+            } else {
+                experiencesSpan.style.width = `2px`
+            }
+        
+            changeActiveExperiencesBtn(nowActive)   
+        }, 300);
+    }
 }
